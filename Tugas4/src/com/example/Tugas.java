@@ -47,22 +47,11 @@ public class Tugas {
                     break;
                 case 3:
                     Honda objek = new Honda();
-                    objek.motot(3);
+                    objek.motot(1);
                     System.exit(0);
                 default:
                     System.out.println("Pilihan belum tersedia");
                     System.exit(0);
-
-
-
-
-
-
-
-
-
-
-
 
 
             }
