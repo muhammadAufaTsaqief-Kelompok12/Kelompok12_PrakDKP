@@ -16,3 +16,47 @@ public class Tugas {
             System.out.println("3. Honda");
             int merk = scan.nextInt();
             System.out.println();
+            switch(merk) {
+                case 1 :
+                    System.out.println("---------------------------------");
+                    System.out.println("Masukkan Budget anda (Dalam juta), ");
+                    System.out.println("---------------------------------");
+                    int Budget = scan.nextInt();
+                    System.out.println("Budget anda" + Budget+ "juta");
+                    if (Budget<=15 ){
+                        System.out.println("Budget anda cocok dengan Suzuki Nex II");
+
+                        System.exit(0);
+                    }
+                    else if (Budget > 15 && Budget <= 25){
+                        System.out.println("Budget anda cocok dengan Nex Crossover");
+                        System.exit(0);
+
+                    }
+                    else if (Budget > 25){
+                        System.out.println("Budget anda cocok dengan Suzuki GSX");
+                        System.exit(0);
+
+
+                    }
+
+
+                case 2 :
+                    System.out.println(kereta());
+                    System.exit(0);
+                    break;
+                case 3:
+                    Honda objek = new Honda();
+                    objek.motot(1);
+                    System.exit(0);
+                default:
+                    System.out.println("Pilihan belum tersedia");
+                    System.exit(0);
+
+
+            }
+
+
+
+
+        }
