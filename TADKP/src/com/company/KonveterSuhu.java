@@ -33,29 +33,37 @@ public class KonveterSuhu{
         frame.setResizable(true);
     }
 
+
     public KonveterSuhu() {
         submitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String input = Input.getText();
-                float a = Float.parseFloat(input);
+                double a = Double.parseDouble(input);
                 Inputawal.getSelectedItem();
                 String inputawal = (String) Inputawal.getSelectedItem();
                 Inputakhir.getSelectedItem();
                 String inputakhir = (String) Inputakhir.getSelectedItem();
+                boolean t;
+                if (a >= 0 || a <= 0){
+                    t = true;
+                }
+                else {
+                    t = false;
+                }
 
 
 
-                while (a == Math.round(a)) {
+                while (t = true) {
                     if (inputawal.equals("Kelvin")) {
                         if (inputakhir.equals("Celcius")) {
-                            float j;
+                            double j;
                             j = a - 273;
                             Output.setText("Hasil = " + j + "Celcius");
                             break;
                         }
                         else if (inputakhir.equals("Reamur")){
-                            float y ;
+                            double y ;
                             double o;
                             y = a + 273;
                             o = y * 0.8;
@@ -63,7 +71,7 @@ public class KonveterSuhu{
                             break;
                         }
                         else if (inputakhir.equals("Farenheit")){
-                            float j;
+                            double j;
                             double k;
                             j = a - 273;
                             k = j * 1.8 + 32;
@@ -79,7 +87,7 @@ public class KonveterSuhu{
                     }
                     else if(inputawal.equals("Celcius")){
                         if(inputakhir.equals("Kelvin")){
-                            float f = a + 273;
+                            double f = a + 273;
                             Output.setText("Hasil =" + f + "Kelvin");
                             break;
                         }
@@ -158,9 +166,11 @@ public class KonveterSuhu{
                     }
 
                 }
-                while (a != Math.round(a)){
-                    PopUp.infoBox("Harap Memasukkan Angka", "Error");
-                }
+               while (t = false){
+                   PopUp.infoBox("Har Memilih satuan yang berbeda", "Error");
+                   break;
+               }
+
 
             }
         });
